@@ -1,24 +1,30 @@
 import React from 'react';
 
+
 function SelectPlayers(props) {
     return (
-        <div className={'pa3 mh7-l'}>
+        <div className={'pa3 mh7-l mh7-m'}>
             <div className="flex flex-column">
-                <div className="outline w-25 pa3 mr2">
-                    <code>1</code>
+
+
+                <div className={'mb1'}>
+                    <h1 className={'mb0'}>Player One</h1>
+                    <input type="text" className={'input-reset pa1 w-100 h2 ba b--black br2'}/>
                 </div>
-                <div className="outline w-25 pa3 mr2">
-                    <code>2</code>
+
+                <div className="tc dark-red">
+                    <h1>Versus</h1>
                 </div>
-                <div className="outline w-25 pa3 mr2">
-                    <code>3</code>
+
+                <div className={'mb3'}>
+                    <h1 className={'mb0 mt0 tr'}>Player Two</h1>
+                    <input type="text" className={'input-reset pa1 w-100 h2 ba b--black br2'}/>
                 </div>
-                <div className="outline w-25 pa3 mr2">
-                    <code>4</code>
+
+                <div>
+                    <button className={'input-reset pa1 h2 fw1 bg-black white ba w-100 b--black br2'}>Battle</button>
                 </div>
-                <div className="outline w-25 pa3">
-                    <code>5</code>
-                </div>
+
             </div>
         </div>
     );
