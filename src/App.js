@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/Header/Header';
-import SelectPlayers from './components/SelectPlayers/SelectPlayers';
+import SelectPlayers from './pages/SelectPlayers/SelectPlayers';
 
 function App() {
   return (
