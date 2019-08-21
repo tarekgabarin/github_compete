@@ -41,10 +41,16 @@ class Popular extends Component {
         });
 
         return (
-            <div>
-                <div className="flex items-center">
-                    {categoriesListJSX}
+            <div className={'pa3 mh7-l mh7-m'}>
+
+                <div className="flex flex-column">
+                    <div className="flex justify-center tc">
+                        {categoriesListJSX}
+                    </div>
                 </div>
+
+                
+
             </div>
         );
     }
