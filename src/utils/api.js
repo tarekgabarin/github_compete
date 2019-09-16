@@ -59,17 +59,16 @@ function sortPlayers(players){
 }
 
 
-module.exports = {
-    battle: function(players){
-        return axios.all(players.map(getUserData))
-            .then(sortPlayers)
-            .catch(handleError)
-    },
-    fetchPopularRepos: function (language) {
-        const encodedURI = window.encodeURI("https://api.github.com/search/repositories?q=stars:>1+language:" + language + "&sort=stars&order=desc&type=Repositories");
-        return axios.get(encodedURI)
-            .then(function(response){
-                return response.data.items;
-            })
-    }
+export function battle(players){
+    return axios.all(players.map(getUserData))
+        .then(sortPlayers)
+        .catch(handleError)
+}
+
+export function fetchPopularRepos (language) {
+    const encodedURI = window.encodeURI("https://api.github.com/search/repositories?q=stars:>1+language:" + language + "&sort=stars&order=desc&type=Repositories");
+    return axios.get(encodedURI)
+        .then(function(response){
+            return response.data.items;
+        })
 }

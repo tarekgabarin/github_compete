@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {fetchPopularRepos} from '../../utils/api';
 
 class Popular extends Component {
 
@@ -22,18 +23,43 @@ class Popular extends Component {
 
     }
 
+    componentDidMount() {
+
+        fetchPopularRepos(this.state.selectedCategory).then(repos => {
+            this.setState({
+                listOfRepos: repos
+            })
+        })
+    }
+
+    selectCategory = (event, category) => {
+
+        event.preventDefault();
+
+        this.setState({
+            selectedCategory: category
+        });
+
+        fetchPopularRepos(category).then(repos => {
+            this.setState({
+                listOfRepos: repos
+            });
+        })
+    };
+
+
     render() {
 
         const categoriesListJSX = this.state.categories.map(item => {
             if (item === this.state.selectedCategory){
                 return (
-                    <div className={'dark-red pa1'}>
+                    <div  className={'link dark-red pa1 pointer'}>
                         {item}
                     </div>
                 )
             } else {
                 return (
-                    <div className={'pa1'}>
+                    <div  onClick={(e) => this.selectCategory(e, item)} className={'link pa1 pointer'}>
                         {item}
                     </div>
                 )
