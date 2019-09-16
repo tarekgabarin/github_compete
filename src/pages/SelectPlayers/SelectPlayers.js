@@ -1,7 +1,22 @@
-import React from 'react';
-
+import React, {useState} from 'react';
 
 function SelectPlayers(props) {
+
+
+    const [playerOne, setPlayerOne] = useState('');
+    const [playerTwo, setPlayerTwo] = useState('');
+
+    function setPlayerName(event, player){
+
+        if (player === 1){
+            setPlayerOne(event.target.value)
+
+        } else if (player === 2) {
+            setPlayerTwo(event.target.value)
+        }
+    }
+
+
     return (
         <div className={'pa3 mh7-l mh7-m'}>
             <div className="flex flex-column">
@@ -9,7 +24,7 @@ function SelectPlayers(props) {
 
                 <div className={'mb1'}>
                     <h1 className={'mb0'}>Player One</h1>
-                    <input type="text" placeholder={'github username'} className={'input-reset pa1 w-100 h2 ba b--black br2'}/>
+                    <input onChange={(e) => setPlayerName(e, 1)} type="text" placeholder={'github username'} className={'input-reset pa1 w-100 h2 ba b--black br2'}/>
                 </div>
 
                 <div className="tc dark-red">
@@ -18,7 +33,7 @@ function SelectPlayers(props) {
 
                 <div className={'mb3'}>
                     <h1 className={'mb0 mt0 tr'}>Player Two</h1>
-                    <input type="text" placeholder={'github username'} className={'input-reset pa1 w-100 h2 ba b--black br2'}/>
+                    <input onChange={(e) => setPlayerName(e, 2)}  type="text" placeholder={'github username'} className={'input-reset pa1 w-100 h2 ba b--black br2'}/>
                 </div>
 
                 <div>
