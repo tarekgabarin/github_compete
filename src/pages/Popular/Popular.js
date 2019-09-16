@@ -13,9 +13,7 @@ class Popular extends Component {
                 'Ruby',
                 'Java',
                 'CSS',
-                'Python',
-                'PHP',
-                'Shell'
+                'Python'
             ],
             selectedCategory: 'All',
             listOfRepos: []
