@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {fetchPopularRepos} from '../../utils/api';
+import ReposList from '../../components/ReposList/ReposList'
 
 class Popular extends Component {
 
@@ -26,7 +27,9 @@ class Popular extends Component {
         fetchPopularRepos(this.state.selectedCategory).then(repos => {
             this.setState({
                 listOfRepos: repos
-            })
+            });
+
+            console.log('repos is', repos);
         })
     }
 
@@ -73,8 +76,7 @@ class Popular extends Component {
                     </div>
                 </div>
 
-
-
+                <ReposList items={this.state.listOfRepos} />
 
             </div>
         );
