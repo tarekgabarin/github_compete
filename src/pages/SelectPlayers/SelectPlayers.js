@@ -17,6 +17,15 @@ function SelectPlayers(props) {
     }
 
 
+    function goToBattle(event){
+
+        event.preventDefault();
+
+        props.history.push(`/results?playerOne=${playerOne}&playerTwo=${playerTwo}`)
+
+    }
+
+
     return (
         <div className={'pa3 mh7-l mh7-m'}>
             <div className="flex flex-column">
@@ -37,7 +46,7 @@ function SelectPlayers(props) {
                 </div>
 
                 <div>
-                    <button className={'input-reset pa1 h2 fw1 bg-black white ba w-100 b--black br2'}>Battle</button>
+                    <button onClick={(e) => goToBattle(e)} className={'input-reset pa1 h2 fw1 bg-black white ba w-100 b--black br2'}>Battle</button>
                 </div>
 
             </div>

@@ -1,20 +1,31 @@
-import React, {useState, useEffect} from 'react';
-import {intersectionTypeAnnotation} from "@babel/types";
+import React, {Component} from 'react';
 
-function Battle(props){
+class Battle extends Component {
 
-    useEffect(() => {
+    constructor(props){
+        super(props)
+    }
 
-        console.log(props)
+    componentDidMount() {
 
-    });
+        console.log('runngins');
 
-    return (
-        <section className={'pa3 mh7-l mh7-m'}>
-            <h1>Stuff</h1>
-        </section>
-    )
 
+        console.log(this.props);
+    }
+
+
+    render() {
+        return (
+            <div className={'pa3 mh7-l mh7-m'}>
+
+                <div className="flex flex-column">
+
+                </div>
+
+            </div>
+        );
+    }
 }
 
-export default Battle
+export default Battle;
