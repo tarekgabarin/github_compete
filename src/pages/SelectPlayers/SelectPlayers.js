@@ -21,7 +21,7 @@ function SelectPlayers(props) {
 
         event.preventDefault();
 
-        props.history.push(`/results?playerOne=${playerOne}&playerTwo=${playerTwo}`)
+        props.history.push(`/results/${playerOne}/${playerTwo}`)
 
     }
 

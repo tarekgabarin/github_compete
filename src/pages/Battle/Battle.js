@@ -1,31 +1,23 @@
-import React, {Component} from 'react';
+import React, {useEffect, useState} from 'react';
 
-class Battle extends Component {
+function Battle(props) {
 
-    constructor(props){
-        super(props)
-    }
+    useEffect(() => {
 
-    componentDidMount() {
+        console.log(props)
 
-        console.log('runngins');
+    }, []);
 
 
-        console.log(this.props);
-    }
+    return (
+        <div className={'pa3 mh7-l mh7-m'} >
 
-
-    render() {
-        return (
-            <div className={'pa3 mh7-l mh7-m'}>
-
-                <div className="flex flex-column">
-
-                </div>
+            <div className="flex flex-column">
 
             </div>
-        );
-    }
+
+        </div>
+    )
 }
 
-export default Battle;
+export default Battle
